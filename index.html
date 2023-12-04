@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora3x3</title>
+    <link rel="stylesheet" href="style3.css">
+    <link rel="shortcut icon" href="calculadora.png">
+
+</head>
+
+<body>
+ <div id="cabecera">
+     <div id="logi"><img id="foto" src="logo.png" /></div>
+ </div>
+<form id="form">
+<div class="container">
+        
+            
+            <center><h1>Calculadora sistema de ecuaciones 3 por 3 Metodo de Cramer</h1></center>
+            <h3>Ingresa tus coeficientes:</h3>
+            <div class="input-co">
+            <input type="number" class="it1" placeholder="0" id="x11"><p><math><msub><mi>x</mi><mn>11</mn></msub></math> +</p>
+            <input type="number" class="it1" placeholder="0" id="x12"><p><math><msub><mi>x</mi><mn>12</mn></msub></math> +</p>
+            <input type="number" class="it1" placeholder="0" id="x13"><p><math><msub><mi>x</mi><mn>13</mn></msub></math> =</p>
+            <input type="number" class="it1" placeholder="0" id="F_1"><p><math><msub><mi>B</mi><mn>1</mn></msub></math></p>
+            </div>
+        
+            <div class="input-co">
+            <input type="number" class="it1" placeholder="0" id="x21"><p><math><msub><mi>x</mi><mn>21</mn></msub></math> +</p>
+            <input type="number" class="it1" placeholder="0" id="x22"><p><math><msub><mi>x</mi><mn>22</mn></msub></math> +</p>
+            <input type="number" class="it1" placeholder="0" id="x23"><p><math><msub><mi>x</mi><mn>23</mn></msub></math> =</p>
+            <input type="number" class="it1" placeholder="0" id="F_2"><p><math><msub><mi>B</mi><mn>2</mn></msub></math></p>
+            </div>
+           
+
+            <div class="input-co">
+            <input type="number" class="it1" placeholder="0" id="x31"><p><math><msub><mi>x</mi><mn>31</mn></msub></math> +</p>
+            <input type="number" class="it1" placeholder="0" id="x32"><p><math><msub><mi>x</mi><mn>32</mn></msub></math> +</p>
+            <input type="number" class="it1" placeholder="0" id="x33"><p><math><msub><mi>x</mi><mn>33</mn></msub></math> =</p>
+            <input type="number" class="it1" placeholder="0" id="F_3"><p><math><msub><mi>B</mi><mn>3</mn></msub></math></p>
+            </div><br>
+            
+            <center><div id="buttoms2">
+                <center>
+            <input class="Bt" type="button" value="Calcular" onclick="calcular()">
+            <input Class="Bt" type="submit" value="Nuevo" id="Limpiar"></center>
+            </div></center><br><br>
+
+
+<div id="Contenedor-r">
+
+    <!-- CONTENEDOR 1 -->
+
+    <div class="cont" id="conten1">
+            <p>&nbsp;&nbsp;&nbsp;<math><msub><mi>⊿</mi><mn>1</mn></msub></math>=</p>
+            <div class="lv1">
+            </div>
+             <div class="lv2">
+            </div>
+            <div class="input-co">
+            <p type="text" class="it2" placeholder="0" id="B1.1.1B" disabled><math><msub><mi>B</mi><mn>1</mn></msub></math></p>
+            <p type="text" class="it2" placeholder="0" id="X1.2.1X" disabled><math><msub><mi>X</mi><mn>12</mn></msub></math></p>
+            <p type="text" class="it2" placeholder="0" id="X1.3.1X" disabled><math><msub><mi>X</mi><mn>13</mn></msub></math></p>
+            </div>
+        
+            <div class="input-co">
+            <p type="text" class="it2" placeholder="0" id="B1.1.2B" disabled><math><msub><mi>B</mi><mn>2</mn></msub></math></p>
+            <p type="text" class="it2" placeholder="0" id="X1.2.2X" disabled><math><msub><mi>X</mi><mn>22</mn></msub></math></p>
+            <p type="text" class="it2" placeholder="0" id="X1.3.2X" disabled><math><msub><mi>X</mi><mn>23</mn></msub></math></p>
+            </div>
+           
+
+            <div class="input-co">
+            <p type="text" class="it2" placeholder="0" id="B1.1.3B" disabled><math><msub><mi>B</mi><mn>3</mn></msub></math></p>
+            <p type="text" class="it2" placeholder="0" id="X1.2.3X" disabled><math><msub><mi>X</mi><mn>32</mn></msub></math></p>
+            <p type="text" class="it2" placeholder="0" id="X1.3.3X" disabled><math><msub><mi>X</mi><mn>33</mn></msub></math></p>
+            </div>
+
+            <div class="linea_1"></div>
+          
+            <div class="lv1">
+            </div>
+             <div class="lv2">
+            </div>
+            
+            <div class="input-co">
+            <p type="text" class="it2" placeholder="0" id="j1" disabled><math><msub><mi>X</mi><mn>11</mn></msub></math></p>  
+            <p type="text" class="it2" placeholder="0" id="j2" disabled><math><msub><mi>X</mi><mn>12</mn></msub></math></p>
+            <p type="text" class="it2" placeholder="0" id="j3" disabled><math><msub><mi>X</mi><mn>13</mn></msub></math></p>
+            </div>
+        
+            <div class="input-co">
+            <p type="text" class="it2" placeholder="0" id="j4" disabled><math><msub><mi>X</mi><mn>21</mn></msub></math></p>
+            <p type="text" class="it2" placeholder="0" id="j5" disabled><math><msub><mi>X</mi><mn>22</mn></msub></math></p>
+            <p type="text" class="it2" placeholder="0" id="j6" disabled><math><msub><mi>X</mi><mn>23</mn></msub></math></p>
+            </div>
+
+            <div class="input-co">
+            <p type="text" class="it2" placeholder="0" id="j7" disabled><math><msub><mi>X</mi><mn>31</mn></msub></math></p>
+            <p type="text" class="it2" placeholder="0" id="j8" disabled><math><msub><mi>X</mi><mn>32</mn></msub></math></p>
+            <p type="text" class="it2" placeholder="0" id="j9" disabled><math><msub><mi>X</mi><mn>33</mn></msub></math></p>
+            </div>
+            <p>&nbsp;&nbsp;&nbsp;<math><msub><mi>⊿</mi><mn>1</mn></msub></math>=&nbsp;<mn id="Respuesta1"></mn></p>
+            
+            
+
+    </div>
+
+    <!-- CONTENEDOR 2 -->
+    
+     <div class="cont" id="conten2">
+        
+            <p>&nbsp;&nbsp;&nbsp;<math><msub><mi>⊿</mi><mn>2</mn></msub></math>=</p>
+            <div class="lv1">
+            </div>
+             <div class="lv2">
+            </div>
+            <div class="input-co">
+            <p type="text" class="it2" placeholder="0" id="X2.1.1X" disabled><math><msub><mi>X</mi><mn>11</mn></msub></math></p>    
+            <p type="text" class="it2" placeholder="0" id="B2.2.1B" disabled><math><msub><mi>B</mi><mn>1</mn></msub></math></p>
+            <p type="text" class="it2" placeholder="0" id="X2.3.1X" disabled><math><msub><mi>X</mi><mn>13</mn></msub></math></p>
+            </div>
+        
+            <div class="input-co">
+            <p type="text" class="it2" placeholder="0" id="X2.1.2X" disabled><math><msub><mi>X</mi><mn>21</mn></msub></math></p>
+            <p type="text" class="it2" placeholder="0" id="B2.2.2B" disabled><math><msub><mi>B</mi><mn>2</mn></msub></math></p>
+            <p type="text" class="it2" placeholder="0" id="X2.3.2X" disabled><math><msub><mi>X</mi><mn>23</mn></msub></math></p>
+            </div>
+           
+
+            <div class="input-co">
+            <p type="text" class="it2" placeholder="0" id="X2.1.3X" disabled><math><msub><mi>X</mi><mn>31</mn></msub></math></p>
+            <p type="text" class="it2" placeholder="0" id="B2.2.3B" disabled><math><msub><mi>B</mi><mn>3</mn></msub></math></p>
+            <p type="text" class="it2" placeholder="0" id="X2.3.3X" disabled><math><msub><mi>X</mi><mn>33</mn></msub></math></p>
+            </div>
+
+            <div class="linea_1"></div>
+          
+            <div class="lv1">
+            </div>
+             <div class="lv2">
+            </div>
+            
+            <div class="input-co">
+            <p type="text" class="it2" placeholder="0" id="k1" disabled><math><msub><mi>X</mi><mn>11</mn></msub></math></p>    
+            <p type="text" class="it2" placeholder="0" id="k2" disabled><math><msub><mi>X</mi><mn>12</mn></msub></math></p>
+            <p type="text" class="it2" placeholder="0" id="k3" disabled><math><msub><mi>X</mi><mn>13</mn></msub></math></p>
+            </div>
+        
+            <div class="input-co">
+            <p type="text" class="it2" placeholder="0" id="k4" disabled><math><msub><mi>X</mi><mn>21</mn></msub></math></p>
+            <p type="text" class="it2" placeholder="0" id="k5" disabled><math><msub><mi>X</mi><mn>22</mn></msub></math></p>
+            <p type="text" class="it2" placeholder="0" id="k6" disabled><math><msub><mi>X</mi><mn>23</mn></msub></math></p>
+            </div>
+           
+
+            <div class="input-co">
+            <p type="text" class="it2" placeholder="0" id="k7" disabled><math><msub><mi>X</mi><mn>31</mn></msub></math></p>
+            <p type="text" class="it2" placeholder="0" id="k8" disabled><math><msub><mi>X</mi><mn>32</mn></msub></math></p>
+            <p type="text" class="it2" placeholder="0" id="k9" disabled><math><msub><mi>X</mi><mn>33</mn></msub></math></p>
+            </div>
+            <p>&nbsp;&nbsp;&nbsp;<math><msub><mi>⊿</mi><mn>2</mn></msub></math>=&nbsp;<mn id="Respuesta2"></mn></p>
+    </div>
+     
+    <!-- CONTENEDOR 3 -->
+
+    <div class="cont" id="conten3">
+            <p>&nbsp;&nbsp;&nbsp;<math><msub><mi>⊿</mi><mn>3</mn></msub></math>=</p>
+            <div class="lv1">
+            </div>
+             <div class="lv2">
+            </div>
+            <div class="input-co">
+            <p type="text" class="it2" placeholder="0" id="X3.1.1X" disabled><math><msub><mi>X</mi><mn>11</mn></msub></math></p>    
+            <p type="text" class="it2" placeholder="0" id="X3.2.1X" disabled><math><msub><mi>X</mi><mn>12</mn></msub></math></p>
+            <p type="text" class="it2" placeholder="0" id="B3.3.1B" disabled><math><msub><mi>B</mi><mn>1</mn></msub></math></p>
+            </div>
+        
+            <div class="input-co">
+            <p type="text" class="it2" placeholder="0" id="X3.1.2X" disabled><math><msub><mi>X</mi><mn>21</mn></msub></math></p>
+            <p type="text" class="it2" placeholder="0" id="X3.2.2X" disabled><math><msub><mi>X</mi><mn>22</mn></msub></math></p>
+            <p type="text" class="it2" placeholder="0" id="B3.3.2B" disabled><math><msub><mi>B</mi><mn>2</mn></msub></math></p>
+            </div>
+           
+
+            <div class="input-co">
+            <p type="text" class="it2" placeholder="0" id="X3.1.3X" disabled><math><msub><mi>X</mi><mn>31</mn></msub></math></p>
+            <p type="text" class="it2" placeholder="0" id="X3.2.3X" disabled><math><msub><mi>X</mi><mn>32</mn></msub></math></p>
+            <p type="text" class="it2" placeholder="0" id="B3.3.3B" disabled><math><msub><mi>B</mi><mn>3</mn></msub></math></p>
+            </div>
+
+            <div class="linea_1"></div>
+
+            <div class="lv1">
+            </div>
+             <div class="lv2">
+            </div>
+            <div class="input-co">
+            <p type="text" class="it2" placeholder="0" id="l1" disabled><math><msub><mi>X</mi><mn>11</mn></msub></math></p>    
+            <p type="text" class="it2" placeholder="0" id="l2" disabled><math><msub><mi>X</mi><mn>12</mn></msub></math></p>
+            <p type="text" class="it2" placeholder="0" id="l3" disabled><math><msub><mi>X</mi><mn>13</mn></msub></math></p>
+            </div>
+        
+            <div class="input-co">
+            <p type="text" class="it2" placeholder="0" id="l4" disabled><math><msub><mi>X</mi><mn>21</mn></msub></math></p>
+            <p type="text" class="it2" placeholder="0" id="l5" disabled><math><msub><mi>X</mi><mn>22</mn></msub></math></p>
+            <p type="text" class="it2" placeholder="0" id="l6" disabled><math><msub><mi>X</mi><mn>23</mn></msub></math></p>
+            </div>
+           
+
+            <div class="input-co">
+            <p type="text" class="it2" placeholder="0" id="l7" disabled><math><msub><mi>X</mi><mn>31</mn></msub></math></p>
+            <p type="text" class="it2" placeholder="0" id="l8" disabled><math><msub><mi>X</mi><mn>32</mn></msub></math></p>
+            <p type="text" class="it2" placeholder="0" id="l9" disabled><math><msub><mi>X</mi><mn>33</mn></msub></math></p>
+            </div>
+            <p>&nbsp;&nbsp;&nbsp;<math><msub><mi>⊿</mi><mn>3</mn></msub></math>=&nbsp;<mn id="Respuesta3"></mn></p>
+    </div>
+
+
+    </div><br><br>
+    <div class="cont1">
+        <div class="divisioncon">
+            <br><center><p><math><msub><mi>⊿</mi></msub><mo>=</mo><mn id="fin"></mn></math></p></center>
+        </div>
+        <div class="divisioncon">
+            <center><math><mrow><msub><mi>⊿</mi><mn>1</mn></msub><mo>/</mo><mi>⊿</mi></mrow><mo>=</mo></math></center>
+            <p>&nbsp;&nbsp;<math><mi>X</mi><mo>=</mo><mfrac><mn id="f1.1"></mn> <mn id="f1.2"></mn></mfrac><mo id="simi"></mo><mn id="fin1"></mn></math></p>
+        </div>
+        <div class="divisioncon">
+            <center><math><mrow><msub><mi>⊿</mi><mn>2</mn></msub><mo>/</mo><mi>⊿</mi></mrow><mo>=</mo></math></center>
+            <p>&nbsp;&nbsp;<math><mi>Y</mi><mo>=</mo><mfrac><mn id="f2.1"></mn> <mn id="f2.2"></mn></mfrac><mo id="simi2"></mo><mn id="fin2"></mn></math></p>
+        </div>
+        <div class="divisioncon">
+            <center><math><mrow><msub><mi>⊿</mi><mn>3</mn></msub><mo>/</mo><mi>⊿</mi></mrow><mo>=</mo></math></center>
+            <p>&nbsp;&nbsp;<math><mi>Z</mi><mo>=</mo><mfrac><mn id="f3.1"></mn> <mn id="f3.2"></mn></mfrac><mo id="simi3"></mo><mn id="fin3"></mn></math></p>
+        </div>
+    </div>
+
+</div>
+        
+
+</form>
+
+<form id="con2">
+    <center><p class="Nombres">&nbsp;&nbsp;Cesar Palma Sanchez</p></center>
+    <center><p class="Nombres">Marcos Jesus Ugalde Zarza</p></center>
+    <center><p class="Nombres">Roy Valentin Hernandez Gutierrez</p></center>
+    <center><p class="Nombres">Samuel Antonio Garduño Viviana</p></center>
+    <center><p class="Nombres">Hugo Erick Garcia Nava&nbsp;&nbsp;</p></center>
+</form>
+<script src="app.js"></script>
+</body>
+
+</html>
